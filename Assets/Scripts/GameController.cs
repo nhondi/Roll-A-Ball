@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour {
                 
         }
         closestPickup.GetComponent <Renderer>().material.color = Color.blue;
-        lineRenderer.SetPosition(0, player.position);
+        lineRenderer.SetPosition(0, Player.position);
         lineRenderer.SetPosition(1, closestPickup.position);
         lineRenderer.startWidth = 0.1f;
         lineRenderer.endWidth = 0.1f;
