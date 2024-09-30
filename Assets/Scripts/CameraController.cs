@@ -13,6 +13,7 @@ public class CameraController : MonoBehaviour
     }
 
     // Update is called once per frame
+    //We modify the position of the camera (through its transform, directly accessible through the variable transform), by adding the offset to the position of the player.
     void LateUpdate()
     {
         transform.position = player.transform.position + offset;
