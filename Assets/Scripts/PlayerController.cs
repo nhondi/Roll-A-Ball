@@ -62,6 +62,6 @@ public class PlayerController : MonoBehaviour {
         }
         velocityText.text = velocityValue.ToString("0.00");
         lastPosition = currentPosition;
-        textPosition.text = currentPosition;
+        textPosition.text = currentPosition.ToString();
     }
 }
