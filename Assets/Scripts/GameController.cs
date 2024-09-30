@@ -28,10 +28,10 @@ public class GameController : MonoBehaviour {
     void getClosestPickup() {
         for (int i = 0; i < allPickups.Count; i++) {
             allPickups[i].GetComponent<Renderer>().material.color = Color.white;
-            float distance = Vector3.distance(allPickups[i].transform.position, Player.transform.position);
+            float distance = Vector3.Distance(allPickups[i].transform.position, Player.transform.position);
 
             if (distance < currentClosestDistance) {
-                closestPickup = allPickups[i];
+                closestPickup = allPickups[i].transform;
             }
                 
         }
