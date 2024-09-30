@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic ;
 using UnityEngine ;
+using TMPro;
 
 public class GameController : MonoBehaviour {
 
@@ -15,7 +16,7 @@ public class GameController : MonoBehaviour {
     void Start () {
         lineRenderer = gameObject.AddComponent<LineRenderer>();
         for (int i = 0; i < pickupParent.childCount; i++) {
-            allPickups.Add(pickupParent.GetChild(i));
+            allPickups.Add(pickupParent.GetChild(i).gameObject);
         }
         currentClosestDistance = Mathf.Infinity;
     }
