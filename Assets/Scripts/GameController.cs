@@ -3,6 +3,13 @@ using System.Collections.Generic ;
 using UnityEngine ;
 using TMPro;
 
+public enum DEBUGMODES
+{
+    NORMAL,
+    DISTANCE,
+    VISION
+}
+
 public class GameController : MonoBehaviour {
 
     private LineRenderer lineRenderer;
@@ -11,6 +18,8 @@ public class GameController : MonoBehaviour {
     public Transform pickupParent;
     public Transform closestPickup;
     public Transform Player;
+
+    public DEBUGMODES currentDebugModes = DEBUGMODES.NORMAL;
 
     void Start () {
         lineRenderer = gameObject.AddComponent<LineRenderer>();
