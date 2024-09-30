@@ -60,5 +60,6 @@ public class PlayerController : MonoBehaviour {
             velocityValue = Vector3.Magnitude((currentPosition - lastPosition) / Time.deltaTime);
         }
         velocityText.text = velocityValue.ToString("0.00");
+        lastPosition = currentPosition;
     }
 }
