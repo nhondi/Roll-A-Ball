@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
     public float velocityValue;
     public Vector3 lastPosition;
     public Vector3 currentPosition;
+    public TextMeshProUGUI textPosition;
 
 
     void Start() {
@@ -61,5 +62,6 @@ public class PlayerController : MonoBehaviour {
         }
         velocityText.text = velocityValue.ToString("0.00");
         lastPosition = currentPosition;
+        textPosition.text = currentPosition;
     }
 }
