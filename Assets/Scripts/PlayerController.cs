@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     public TextMeshProUGUI velocityText;
     public float velocityValue;
     public Vector3 lastPosition;
+    public Vector3 currentPosition;
 
 
     void Start() {
@@ -54,7 +55,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void PositionAndVelocity() {
-        currentPosition = transform.position
+        currentPosition = transform.position;
         if (currentPosition != lastPosition) {
             velocityValue = Vector3.Magnitude((currentPosition - lastPosition) / Time.deltaTime);
         }
