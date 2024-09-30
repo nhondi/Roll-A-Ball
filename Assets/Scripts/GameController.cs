@@ -11,14 +11,12 @@ public class GameController : MonoBehaviour {
     public Transform pickupParent;
     public Transform closestPickup;
     public Transform Player;
-    public float currentClosestDistance;
 
     void Start () {
         lineRenderer = gameObject.AddComponent<LineRenderer>();
         for (int i = 0; i < pickupParent.childCount; i++) {
             allPickups.Add(pickupParent.GetChild(i).gameObject);
         }
-        currentClosestDistance = Mathf.Infinity;
     }
     void Update () {
         getClosestPickup();
@@ -28,9 +26,14 @@ public class GameController : MonoBehaviour {
     void getClosestPickup() {
         for (int i = 0; i < allPickups.Count; i++) {
             allPickups[i].GetComponent<Renderer>().material.color = Color.white;
-            float distance = Vector3.Distance(allPickups[i].transform.position, Player.transform.position);
+            float distance = Vector3.Distance(allPickups[i].transform.position, Player.position);
 
-            if (distance < currentClosestDistance) {
+            if( closestPickup == null )
+            {
+                closestPickup = allPickups[i].transform;
+            }
+
+            if (distance < Vector3.Distance(Player.position, closestPickup.position)) {
                 closestPickup = allPickups[i].transform;
             }
                 
