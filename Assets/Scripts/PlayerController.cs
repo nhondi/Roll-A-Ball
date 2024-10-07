@@ -32,6 +32,11 @@ public class PlayerController : MonoBehaviour {
         moveValue = value.Get<Vector2 >();
     }
 
+    void OnSwitch(InputValue value)
+    {
+        GameController.instance.SwitchDebugModes();
+    }
+
     void FixedUpdate() {
         Vector3 movement = new Vector3(moveValue.x, 0.0f, moveValue.y) ;
 
@@ -63,5 +68,18 @@ public class PlayerController : MonoBehaviour {
         velocityText.text = velocityValue.ToString("0.00");
         lastPosition = currentPosition;
         textPosition.text = currentPosition.ToString();
+    }
+
+    private void IncomingRaycast()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, velocityValue))
+        {
+            //do something if hit object ie
+            if (hit.collider.tag == "Pickup")
+            {
+                Debug.Log("Close to enemy");
+            }
+        }
     }
 }

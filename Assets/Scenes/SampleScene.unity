@@ -1679,7 +1679,7 @@ MonoBehaviour:
   pickupParent: {fileID: 1204047563}
   closestPickup: {fileID: 0}
   Player: {fileID: 430033262}
-  currentClosestDistance: 0
+  currentDebugModes: 0
 --- !u!1 &981101467
 GameObject:
   m_ObjectHideFlags: 0
